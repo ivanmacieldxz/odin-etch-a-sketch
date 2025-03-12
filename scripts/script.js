@@ -31,6 +31,7 @@ function createGrid(number) {
         //add hover event
         square.addEventListener("mouseover", () => {
             changeBackColor(square);
+            increaseOpacity(square);
         });        
 
         //add created square to container and to squares list
@@ -69,4 +70,22 @@ function changeBackColor(square) {
     let blue = Math.random() * 255;
 
     square.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+}
+
+function increaseOpacity(square) {
+    let opacity = parseFloat(square.style.opacity);
+
+    console.log(opacity);
+
+    //if opacity was not specified (square not hovered yet)
+    if (Object.is(NaN, opacity)) {
+        //specify it
+        opacity = 0;
+    }
+
+    //if isn't fully opaque already
+    if (opacity < 1) {
+        //increase it on 10%
+        square.style.opacity = opacity + 0.1;
+    }
 }
