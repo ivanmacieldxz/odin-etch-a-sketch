@@ -28,6 +28,11 @@ function createGrid(number) {
         square.classList.add("grid-square");
         square.style = "flex: 0 0 calc(100%/" + number + ");";
 
+        //add hover event
+        square.addEventListener("mouseover", () => {
+            changeBackColor(square);
+        });        
+
         //add created square to container and to squares list
         container.appendChild(square);
         squares.push(square);
@@ -56,4 +61,12 @@ function createButton() {
     button.innerText = "Create new grid";
 
     document.body.insertBefore(button, container);
+}
+
+function changeBackColor(square) {
+    let red = Math.random() * 255;
+    let green = Math.random() * 255;
+    let blue = Math.random() * 255;
+
+    square.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }

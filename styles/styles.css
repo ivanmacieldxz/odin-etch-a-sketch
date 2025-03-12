@@ -33,7 +33,3 @@ button {
     aspect-ratio: 1 / 1;
     background-color: transparent;
 }
-
-#grid-container .grid-square:hover {
-    background-color: darkgray;
-}
