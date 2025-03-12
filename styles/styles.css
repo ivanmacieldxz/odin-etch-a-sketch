@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+button {
+    margin: 0 auto 20px;
+    background-color: darkgray;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    display: block;
+}
+
+#grid-container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+#grid-container .grid-square {
+    border: 1px solid darkgray;
+    flex: 0 0 calc(100% /16);
+    aspect-ratio: 1 / 1;
+    background-color: transparent;
+}
+
+#grid-container .grid-square:hover {
+    background-color: darkgray;
+}
